@@ -1,0 +1,69 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" controllerName="com.sap.TRAVEL_PROJECT_1.controller.Details1">
+	<App>
+		<pages>
+			<Page title="Travel Details" showNavButton="true" navButtonPress="goBack">
+				<content>
+					<Toolbar width="100%" id="toolbar1">
+						<content>
+							<ToolbarSpacer id="spacer0"/>
+							<Button xmlns="sap.m" id="button2" type="Emphasized" text="Edit" icon="sap-icon://edit" press="onEdit"/>
+							<Button xmlns="sap.m" text="Delete" id="button1" type="Emphasized" icon="sap-icon://delete" press="onDelete"/>
+						</content>
+					</Toolbar>
+						<VBox>
+							<items>
+					<f:SimpleForm layout="ResponsiveGridLayout" title="Travel Details" labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1" width="700px" backgroundDesign="Solid" id="Aform" editable="true">
+						<f:content>
+							
+							<Text text="{Status}" id="stat" visible="false"/>
+						    <Text text="{INumber}" id="i" visible="false"/>
+							<Label text="Request ID" id="label02"/>
+							<Text text="{Reqid}" id="rid"/>
+							<Label text="Created Date" id="label021"/>
+							<Text text="{path:'Reqdate', type:'sap.ui.model.type.Date', formatOptions: {pattern: 'dd MMMM, yyyy'  } }" id="cid"/>
+							<Label text="Modified Date" id="label022"/>
+							<Text text="{path:'Moddate', type:'sap.ui.model.type.Date', formatOptions: {pattern: 'dd MMMM, yyyy'  } }" id="mid"/>
+							<Label text="Destination" id="label0"/>
+							<Input width="50%" id="adest" value="{Destination}"/>
+							<Label text="Type of expense" id="expen"/>
+							<ComboBox xmlns="sap.m" id="box0" filterSecondaryValues="true" showSecondaryValues="true" selectedKey="{ExpenseType}" width="50%">
+								<items>
+									<core:Item xmlns:core="sap.ui.core" key="FOOD" text="food" id="fd"/>
+									<core:Item xmlns:core="sap.ui.core" key="TRANSPORT" text="travel" id="tr"/>
+									<core:Item xmlns:core="sap.ui.core" key="STAY" text="accomodation" id="ac"/>
+									<core:Item xmlns:core="sap.ui.core" key="OTHERS" text="others" id="ot"/>
+								</items>
+							</ComboBox>
+							<Label text="Bill Amount" id="label1"/>
+							<Input width="50%" id="bamt" value="{path:'Billamt'}"  />
+							<Label text="Bill Number" id="label11"/>
+							<Input width="50%" id="bno" value="{Billno}"/>
+							<Label text="Date of Travel" id="label2"/>
+							<DatePicker xmlns="sap.m" id="picker0" width="50%" value="{Transd}"/>
+							<Label text="Comments" id="label111"/>
+							<TextArea xmlns="sap.m" rows="4" id="comments" value="{Comments}"/>
+							<Label text="Upload Bill" id="labell"/>
+							<UploadCollection noDataText="No files found." noDataDescription="Drop files to upload, or use the &quot;+&quot; button." id="billupload">
+								<items>
+									<UploadCollectionItem fileName="fileName" uploadedDate="Tue Mar 31 2020" id="billid"/></items>
+							</UploadCollection>
+								
+						</f:content>
+					</f:SimpleForm>
+					</items>
+					</VBox>
+				
+				</content>
+				<footer>
+					<Toolbar class="sapContrast sapContrastPlus" width="100%" id="toolbar">
+						<content>
+							<Button xmlns="sap.m" text="Save" id="button3" type="Accept" icon="sap-icon://accept" press="onSave"/>
+							<ToolbarSpacer id="spacer01_1585628234749"/>
+							<Button xmlns="sap.m" text="Cancel" id="button0" type="Reject" icon="sap-icon://decline"/>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

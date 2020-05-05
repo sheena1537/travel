@@ -1,0 +1,27 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZODATA_TRAVEL_APP1_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="EMPLOYEE" sap:content-version="1">
+				<Key><PropertyRef Name="INumber"/></Key><Property Name="INumber" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="I NUMBER" sap:updatable="false"/><Property Name="Fname" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="FIRST NAME"/><Property Name="Lname" Type="Edm.String" MaxLength="50" sap:unicode="false" sap:label="LAST NAME"/><Property Name="Phone" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="PHONE NUMBER" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Email" Type="Edm.String" MaxLength="50" sap:unicode="false" sap:label="EMAIL ID" sap:sortable="false" sap:filterable="false"/><Property Name="Address" Type="Edm.String" MaxLength="200" sap:unicode="false" sap:label="ADDRESS" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Gender" Type="Edm.String" MaxLength="7" sap:unicode="false" sap:label="GENDER"/><Property Name="MgrIno" Type="Edm.String" MaxLength="7" sap:unicode="false" sap:label="MANAGER I NUMBER" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityType Name="TRAVEL_DETAIL" sap:content-version="1">
+				<Key><PropertyRef Name="Reqid"/></Key><Property Name="Reqid" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="REQUEST ID" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Destination" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="DESTINATION" sap:sortable="false"/><Property Name="ExpenseType" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="TYPE OF EXPENSE" sap:sortable="false"/><Property Name="Status" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="STATUS OF REQUEST" sap:sortable="false"/><Property Name="Comments" Type="Edm.String" MaxLength="500" sap:unicode="false" sap:label="COMMENTS" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Billamt" Type="Edm.Decimal" Precision="15" Scale="2" sap:unicode="false" sap:label="BILL AMOUNT" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Billno" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="BILL NUMBER" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Transd" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="TRAVEL DATE"/><Property Name="Reqdate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="REQUEST DATE" sap:filterable="false"/><Property Name="Moddate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="MODIFIED DATE" sap:filterable="false"/><Property Name="Bill" Type="Edm.Binary" sap:unicode="false" sap:label="BILL" sap:sortable="false" sap:filterable="false"/><Property Name="INumber" Type="Edm.String" MaxLength="7" sap:unicode="false" sap:label="inumber" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZODATA_TRAVEL_APP1_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="EMPLOYEESet" EntityType="ZODATA_TRAVEL_APP1_SRV.EMPLOYEE" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="TRAVEL_DETAILSet" EntityType="ZODATA_TRAVEL_APP1_SRV.TRAVEL_DETAIL" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<FunctionImport Name="UPDATE_PWD" ReturnType="ZODATA_TRAVEL_APP1_SRV.EMPLOYEE" EntitySet="EMPLOYEESet" m:HttpMethod="POST"
+					sap:label="UPDATE PASSWORD"><Parameter Name="INUMBER" Type="Edm.String" Mode="In"/><Parameter Name="OLD_PWD" Type="Edm.String" Mode="In"/><Parameter Name="NEW_PWD" Type="Edm.String" Mode="In"/></FunctionImport>
+				<FunctionImport Name="UPDATE_EMP_LOG" ReturnType="ZODATA_TRAVEL_APP1_SRV.EMPLOYEE" EntitySet="EMPLOYEESet" m:HttpMethod="POST"
+					sap:label="UPDATE EMP LOG"><Parameter Name="INUMBER" Type="Edm.String" Mode="In"/><Parameter Name="PWD" Type="Edm.String" Mode="In"/></FunctionImport>
+				<FunctionImport Name="GET_TRAVEL_DETAILS" ReturnType="Collection(ZODATA_TRAVEL_APP1_SRV.TRAVEL_DETAIL)" EntitySet="TRAVEL_DETAILSet"
+					m:HttpMethod="GET" sap:label="GET TRAVEL DETAILS"><Parameter Name="INUMBER" Type="Edm.String" Mode="In"/><Parameter Name="PWD" Type="Edm.String" Mode="In"/></FunctionImport>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZODATA_TRAVEL_APP1_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZODATA_TRAVEL_APP1_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

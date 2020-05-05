@@ -1,0 +1,92 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="com.sap.TRAVEL_PROJECT_1.controller.Main_view1">
+	<App>
+		<pages>
+			<Page title="WELCOME">
+				<content>
+					<Toolbar width="100%" id="toolbar1">
+						<content>
+							<Button xmlns="sap.m" text="Create New Request" id="button0" icon="sap-icon://add" press="createRequest"/>
+							<ToolbarSpacer id="spacer0"/>
+							<Button xmlns="sap.m" id="button0_1585623691570" icon="sap-icon://account" press="logout"/>
+						</content>
+					</Toolbar>
+					
+					<!--<VBox width="100%" direction="Column" id="vbox0_1585623492797">-->
+					<!--	<items>-->
+					<!--		<List noDataText="Drop list items here" id="Alst" items="{/results}">-->
+					<!--			<items>-->
+					<!--				<StandardListItem type="Navigation" title="Requset Id : {Reqid}" description="Destination : {Destination} " icon="sap-icon://customer-financial-fact-sheet" id="item0" press="viewDetails"/>-->
+					<!--			</items>-->
+					<!--		</List>-->
+					<!--	</items>-->
+					<!--</VBox>-->
+				
+					
+					<VBox width="100%" direction="Column" id="vbox0" backgroundDesign="Solid">
+						<items>
+							<Table noDataText="Drop column list items here and columns in the area above" id="table0" items="{/results}">
+								<items>
+									<ColumnListItem xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" type="Active" id="item0_1586091211617" press="viewDetails">
+										<cells>
+										
+											<Text text="{Reqid}" id="text0"/>
+											<Text text="{Destination}" id="text1"/>
+											<Text text="{path:'Reqdate', type:'sap.ui.model.type.Date', formatOptions: {pattern: 'dd MMMM, yyyy'  } }" id="cid"/>
+											<Text text="{path:'Moddate', type:'sap.ui.model.type.Date', formatOptions: {pattern: 'dd MMMM, yyyy'  } }" id="text2"/>
+											
+												<ObjectStatus
+												text="{Status}"
+												icon ="sap-icon://circle-task-2"
+												state="{
+													path: 'Status',
+													formatter: '.formatter.status'
+												}" />
+											<core:Icon src="sap-icon://feeder-arrow" size="0.8em" id="icon0"/>
+										</cells>
+									</ColumnListItem>
+								</items>
+								<columns>
+									<Column id="column0">
+										<header>
+											<Label text="REQUEST ID" id="label0_1586091211617"/>
+										</header>
+									</Column>
+									<Column id="column1">
+										<header>
+											<Label text="DESTINATION" id="label1"/>
+										</header>
+									</Column>
+									<Column id="column2">
+										<header>
+											<Label text="REQUESTED DATE" id="label2"/>
+										</header>
+									</Column>
+									<Column id="column3">
+										<header>
+											<Label text="LAST MODIFIED DATE" id="label3"/>
+										</header>
+									</Column>
+									<Column id="column4">
+										<header>
+											<Label text="STATUS" id="label4"/>
+										</header>
+									</Column>
+									<Column id="column5" width="0.7em">
+										
+									</Column>
+								</columns>
+							</Table>
+						</items>
+					</VBox>
+				</content>
+				<footer>
+					<Toolbar class="sapContrast sapContrastPlus" width="100%" id="toolbar1_1585628293177">
+						<content>
+							<Label width="100%" id="label0"/>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

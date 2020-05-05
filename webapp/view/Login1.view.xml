@@ -1,0 +1,21 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.sap.TRAVEL_PROJECT_1.controller.Login1"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="TRAVEL APP" class="pagesh">
+				<content>
+					<VBox fitContainer="true" justifyContent="Center" alignContent="SpaceAround" alignItems="Center" direction="Column">
+						<items>
+							<Label text="use your credentials to login"/>
+							<Input placeholder="username" id="UN"/>
+							<Input placeholder="password" type="Password" id="PWD"/>
+							<Button width="12rem" text="login" type="Emphasized" press="Loginfn" />
+							<Label id="UN1"/>
+							<Label id="lbl"/>
+						</items>
+					</VBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
